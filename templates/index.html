@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI GPT-4 Interaction</title>
+</head>
+<body>
+    <h1>OpenAI GPT-4 Interaction</h1>
+    <p>{{ instructions }}</p>
+    <form action="/generate" method="post">
+        <label for="user_input">Your Prompt:</label>
+        <textarea id="user_input" name="user_input" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Generate Code">
+    </form>
+    {% if user_input %}
+        <h2>Your Prompt:</h2>
+        <p>{{ user_input }}</p>
+        <h2>Generated Code:</h2>
+        <p>{{ code_output }}</p>
+    {% endif %}
+</body>
+</html>
